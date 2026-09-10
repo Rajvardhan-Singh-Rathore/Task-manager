@@ -18,8 +18,7 @@ function Create() {
     setDescription(e.target.value);
   }
   const handleSignup = async ()=>{
-    let response;
-    try{response = await axios.post(`${BACKEND_URL}/task`,{
+    try{await axios.post(`${BACKEND_URL}/task`,{
         title,description
     },{
       headers:{Authorization:localStorage.getItem('token')}

@@ -18,8 +18,7 @@ function Update() {
     setDescription(e.target.value);
   }
   const handleSignup = async ()=>{
-    let response;
-    try{response = await axios.put(`${BACKEND_URL}/task`+`${location.pathname}`,{
+    try{await axios.put(`${BACKEND_URL}/task`+`${location.pathname}`,{
         title,description
     },{
       headers:{Authorization:localStorage.getItem('token')}
