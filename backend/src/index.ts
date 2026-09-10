@@ -1,3 +1,4 @@
+import 'dotenv/config.js';
 import express from 'express'
 import { userRouter } from './routes/user.js';
 import { taskRouter } from './routes/task.js';
@@ -13,4 +14,5 @@ app.get('/',(req,res)=>{
 app.use('/user',userRouter)
 app.use('/task',taskRouter)
 
-app.listen(3000,()=>console.log('server running at 3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,()=>console.log(`server running at ${PORT}`));
