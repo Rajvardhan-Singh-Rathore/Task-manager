@@ -2,12 +2,14 @@ import { useState } from "react"
 import { Input } from "../components/Input"
 import { Button } from "../components/Button";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [warning,setWarning] = useState("");
   const BACKEND_URL="https://task-manager-5jg0.onrender.com"
+  const navigate = useNavigate();
   const handleEmailChange = (e:any)=>{
     setEmail(e.target.value);
   }
@@ -21,6 +23,7 @@ function Signup() {
         "password":password
     })
         localStorage.setItem('token',response.data.token);
+        navigate('/dashboard')
     }catch(e:any){setWarning(e?.response.data.message)}
   }
   return (

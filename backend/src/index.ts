@@ -5,7 +5,7 @@ import { taskRouter } from './routes/task.js';
 import cors from 'cors'
 const app = express();
 //cors
-const corsOptions = {origin:'http://localhost:5173'}
+const corsOptions = {origin:'https://task-manager-phi-black-43.vercel.app'}
 app.use(cors(corsOptions));
 
 app.get('/',(req,res)=>{
