@@ -1,0 +1,25 @@
+// use prisma-next
+// Contract inferred from the live database schema. Edit as needed, then run `prisma contract emit`.
+
+model User {
+  id       String @id(map: "user_pkey") @default(uuid())
+  email    String @unique(map: "user_email_key")
+  name     String?
+  password String
+  tasks    Task[]
+
+  @@map("user")
+}
+
+model Task {
+  id          String      @id(map: "task_pkey") @default(uuid())
+  completed   Boolean
+  createdAt   Timestamptz
+  description String
+  title       String      @unique(map: "task_title_key")
+  userId      String
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade, map: "task_userId_fkey")
+
+  @@index([userId], name: "task_userId_idx")
+  @@map("task")
+}
