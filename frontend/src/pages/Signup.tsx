@@ -7,7 +7,7 @@ function Signup() {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [warning,setWarning] = useState("");
-  const BACKEND_URL="http://localhost:3000"
+  const BACKEND_URL="https://task-manager-5jg0.onrender.com"
   const handleEmailChange = (e:any)=>{
     setEmail(e.target.value);
   }

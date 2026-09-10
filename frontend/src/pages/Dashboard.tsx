@@ -8,7 +8,7 @@ function Dashboard() {
   const navigate = useNavigate();
   const [tasks,setTasks] = useState<any[]>([]);
   const [warning,setWarning] = useState<string>('');
-  const BACKEND_URL = 'http://localhost:3000'
+  const BACKEND_URL = 'https://task-manager-5jg0.onrender.com'
   let flag:string= "notLoading";
   const onOpenClick = function(id:string){
     navigate(`/task/${id}`);

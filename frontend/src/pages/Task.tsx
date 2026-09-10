@@ -7,7 +7,7 @@ function Task({}) {
   const [warning,setWarning] = useState("")
   const [title,setTitle] = useState("");
   const [description,setDescription] = useState("");
-  const BACKEND_URL = 'http://localhost:3000'
+  const BACKEND_URL = 'https://task-manager-5jg0.onrender.com'
   const location = useLocation();
   useEffect(()=>{
     async function getTask(){
